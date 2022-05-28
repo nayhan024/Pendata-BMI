@@ -1,5 +1,5 @@
 # Pendata-BMI
-This source code was made by Nathaniel Huang, Ferdinand Daniel, Marchell
+This source code was made by Ferdinand Daniel, Muhammad Marchell Erniza Putra, Nathaniel Huang
 
 # Deskripsi program
 Program ini merupakan program yang mengambil input berupa nama, tinggi, dan berat yang akan disimpan pada file lokal.
