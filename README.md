@@ -17,7 +17,7 @@ Terdapat 4 function pada program ini yaitu :
       Data nama akan disimpan pada linked-list, sedangkan tinggi dan berat akan diubah ke BMI untuk disimpan pada array,
       Program akan membuat file notepad lokal untuk menyimpan data linked-list dan array tersebut.
     
-3. Search data
+2. Search data
     Function ini berfungsi untuk mencari data pada database sesuai input user.
     - Alur :
       Program memiliki 2 jenis pencarian yaitu secara nama atau BMI. 
@@ -25,14 +25,14 @@ Terdapat 4 function pada program ini yaitu :
       Program akan melakukan fungsi search dengan mengecek kesamaan data yang ada dengan input user dan mengoutput nama dan BMI yang dicari
       Program juga akan menambahkan keadaan tubuh dan kesehatan untuk data yang dioutput.
     
-5. Show data
+3. Show data
     Function ini berfungsi untuk menunjukan data pada database sesuai dengan urutan yang diinginkan user.
     - Alur :
       Program memiliki 6 jenis pengurutan yaitu waktu, nama, dan BMI secara ascending maupun descending.
       Program mengambil input dari user berupa jenis pengurutan yang diinginkan.
       Program akan mengurutkan data tersebut sesuai dengan pilihan user lalu ditampilkan pada layar.
-    
-7. Delete data
+      
+4. Delete data
     Function ini berfungsi untuk mendelete data pada database.
     - Alur :
       Program membuka dan mengambil data pada database kedalam sistem lalu ditampilkan. (Jika data kosong maka akan langsung berakhir)
@@ -40,4 +40,9 @@ Terdapat 4 function pada program ini yaitu :
       Program akan melakukan search data untuk mencari data yang sama lalu dihapus pada data sistem.
       Data sistem tersebut akan ditulis ulang pada database.
     
-    
+5. Binary Search Tree
+    Function ini berfungsi untuk memasukan data kedalam bentuk binary tree
+    - Alur :
+      Program membuka dan mengambil data pada database kedalam sistem dalam bentuk binary tree lalu ditampilkan.
+      Program akan meminta input dari user untuk data yang akan dicari.
+      Program melakukan pencarian lalu menampilkan address dan value data tersebut.
