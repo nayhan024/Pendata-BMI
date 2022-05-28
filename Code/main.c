@@ -7,6 +7,7 @@
 #include "int_only.h"
 #include "kategori.h"
 #include "Hapus.h"
+#include "binary_tree.h"
 
 void tampilan(){
 	system("cls");
@@ -15,7 +16,8 @@ void tampilan(){
 	printf("1. Input data\n");
 	printf("2. Search data\n");
 	printf("3. Show data\n");
-	printf("4. Delete data\n\n");
+	printf("4. Delete data\n");
+	printf("5. Binary Search Tree\n\n");
 	printf("0. Exit\n\n");
 }
 
@@ -29,10 +31,10 @@ void main(){
 		do{
 			printf("Select (input berupa angka): ");
 			menu = getIntegerOnly();
-			if(menu < 0 || menu > 3){
+			if(menu < 0 || menu > 5){
 				printf("Input salah\n");
 			}
-		}while(menu < 0 || menu > 4);
+		}while(menu < 0 || menu > 5);
 	
 		system("cls");
 	
@@ -49,6 +51,9 @@ void main(){
 			case 4:
 				hapus();
 				break;	
+			case 5:
+				binary_tree();
+				break;
 			default:
 				break;
 		}

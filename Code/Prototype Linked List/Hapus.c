@@ -96,72 +96,75 @@ void hapus(){
 		int result = 0;
 		char cari_nama[10] = {'\0'};
 
-		printf("\nNama yang dicari : ");
+		printf("\nNama yang dicari (0 untuk kembali) : ");
 		scanf(" %s", &cari_nama);
 	
-		//hapus
-		iteratorPtr = headAddress; //iteratorPtr adalah alamat yg akan dicek
-		if(strcmp(cari_nama, (*iteratorPtr).nama) == 0){
-			printf("\n%s : ", (*iteratorPtr).nama);
-			printf("%d -> Berhasil dihapus", (*iteratorPtr).data);
-		
-			headAddress = (*iteratorPtr).next;
-			free(iteratorPtr);
-			result++;
-		}
-		for(i=1;i<size;i++){
-		
-			if(strcmp(cari_nama, (*iteratorPtr).nama) == 0){
-				printf("\n%s : ", (*iteratorPtr).nama);
-				printf("%d -> Berhasil dihapus\n", (*iteratorPtr).data);
-			
-				free(iteratorPtr);
-				(*tmpAddress).next = (*iteratorPtr).next;
-				iteratorPtr = tmpAddress;
-				result++;
-			}	
-			tmpAddress = iteratorPtr;
-			iteratorPtr = (*iteratorPtr).next;
-		}
-	
-		if(result != 1){
-			printf("\nNot found\n\n");
+		if(strcmp(cari_nama, "0") == 0){
 		}
 		else{
-			printf("\n%d data dihapus\n", result);
-		}
-	
-		// open the file for writing
-		fa = fopen(filename1, "w"); // file data
-   		if (fa == NULL){
-   	    	printf("Error opening the file %s", filename);
-   		}
-	
-		fb = fopen(filename, "w");	
-    	if (fb == NULL){
-    	    printf("Error opening the file %s", filename);
-    	}
-    
-   		// write to the text file   
-	   	iteratorPtr = headAddress; //iteratorPtr adalah alamat yg akan dicek
- 		while(1){
-			if((*iteratorPtr).next == NULL){
-				fprintf(fa, "%s\n", (*iteratorPtr).nama);
-        	fprintf(fb, "%d\n", (*iteratorPtr).data);
-				break;
+			//hapus
+			iteratorPtr = headAddress; //iteratorPtr adalah alamat yg akan dicek
+			if(strcmp(cari_nama, (*iteratorPtr).nama) == 0){
+				printf("\n%s : ", (*iteratorPtr).nama);
+				printf("%d -> Berhasil dihapus", (*iteratorPtr).data);
+		
+				headAddress = (*iteratorPtr).next;
+				free(iteratorPtr);
+				result++;
 			}
-			else{
-				fprintf(fa, "%s\n", (*iteratorPtr).nama);
-        		fprintf(fb, "%d\n", (*iteratorPtr).data);
+			for(i=1;i<size;i++){
+		
+				if(strcmp(cari_nama, (*iteratorPtr).nama) == 0){
+					printf("\n%s : ", (*iteratorPtr).nama);
+					printf("%d -> Berhasil dihapus\n", (*iteratorPtr).data);
+			
+					free(iteratorPtr);
+					(*tmpAddress).next = (*iteratorPtr).next;
+					iteratorPtr = tmpAddress;
+					result++;
+				}	
+				tmpAddress = iteratorPtr;
 				iteratorPtr = (*iteratorPtr).next;
 			}
-		}
 	
-  	  // close the file
-  	  fclose(fa);
-  	  fclose(fb);
+			if(result != 1){
+				printf("\nNot found\n\n");
+			}
+			else{
+				printf("\n%d data dihapus\n", result);
+			}
+	
+			// open the file for writing
+			fa = fopen(filename1, "w"); // file data
+   			if (fa == NULL){
+   	  	  		printf("Error opening the file %s", filename);
+   			}
+	
+			fb = fopen(filename, "w");	
+    		if (fb == NULL){
+    	   		printf("Error opening the file %s", filename);
+    		}
+    
+   			// write to the text file   
+	   		iteratorPtr = headAddress; //iteratorPtr adalah alamat yg akan dicek
+ 			while(1){
+				if((*iteratorPtr).next == NULL){
+					fprintf(fa, "%s\n", (*iteratorPtr).nama);
+        		fprintf(fb, "%d\n", (*iteratorPtr).data);
+					break;
+				}
+				else{
+					fprintf(fa, "%s\n", (*iteratorPtr).nama);
+        			fprintf(fb, "%d\n", (*iteratorPtr).data);
+					iteratorPtr = (*iteratorPtr).next;
+				}
+			}
+	
+  	  		// close the file
+  	 		fclose(fa);
+  	 		fclose(fb);
+  	 	}
 	}
-	
 	
     printf("\n\n");
     system("pause");
