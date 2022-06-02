@@ -41,22 +41,6 @@ struct root* insert(struct root* root, int key)
     /* return the (unchanged) root pointer */
     return root;
 }
- 
-/* Given a non-empty binary search
-   tree, return the root
-   with minimum key value found in
-   that tree. Note that the
-   entire tree does not need to be searched. */
-struct root* minValueNode(struct root* root)
-{
-    struct root* current = root;
- 
-    /* loop down to find the leftmost leaf */
-    while (current && current->left != NULL)
-        current = current->left;
- 
-    return current;
-}
 
 struct root* search_binary(struct root* root, int key)
 {
